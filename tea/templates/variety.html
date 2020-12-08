@@ -1,0 +1,22 @@
+{% extends 'base1.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for products in all_products %}
+        <div class="card" style="width: 18rem; margin-right: 50px; margin-top: 10%; box-shadow: 2px 2px 5px grey;">
+            <div class="card-body">
+                <h5 class="card-title">{{products.name}}</h5>
+                <p class="card-text">{{products.description}}</p>
+                <a href="{% url 'addProduct' products.id %}" class="btn btn-success">Add Variety</a>
+                <a href="{% url 'specificVariety' products.id %}" class="btn btn-info">View Constituents</a>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
